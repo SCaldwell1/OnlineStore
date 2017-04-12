@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Intent productDetailsIntent = new Intent(getBaseContext(),ProductDetailsActivity.class);
+                Intent productDetailsIntent = new Intent(MainActivity.this,ProductDetailsActivity.class);
                 productDetailsIntent.putExtra(ProductHelper.PRODUCT_INDEX, position);
                 startActivity(productDetailsIntent);
             }
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent viewShoppingCartIntent = new Intent(getBaseContext(), ShoppingCartActivity.class);
+                Intent viewShoppingCartIntent = new Intent(MainActivity.this, ShoppingCartActivity.class);
                 startActivity(viewShoppingCartIntent);
             }
         });

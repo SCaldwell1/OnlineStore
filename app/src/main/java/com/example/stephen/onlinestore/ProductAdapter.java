@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 
 
-class ProductAdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
 
     private List<Product> mProductList;
     private LayoutInflater mInflater;

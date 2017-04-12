@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Vector;
 
 
-class ProductHelper {
+public class ProductHelper {
     public static final String PRODUCT_INDEX = "INDEX";
 
     private static List<Product> list;

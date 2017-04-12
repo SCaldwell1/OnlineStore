@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 
 
 
-class Product {
+public class Product {
     public String title;
     public Drawable productImage;
     public String description;

@@ -6,4 +6,6 @@
     <string name="quantity">Quantity:</string>
     <string name="product_description">Product description</string>
     <string name="the_witcher_3_wild_hunt">The Witcher 3: Wild Hunt</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="click_on_a_product_to_edit_the_quantity">Click on a product to edit the quantity</string>
 </resources>
