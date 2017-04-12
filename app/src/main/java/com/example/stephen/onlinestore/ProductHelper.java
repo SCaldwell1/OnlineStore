@@ -15,4 +15,8 @@ class ProductHelper {
 
         return null;
     }
+
+    public static String getProductQuantity(Product p) {
+        return null;
+    }
 }

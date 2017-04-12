@@ -9,31 +9,65 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Stephen on 12/04/2017.
- */
+
 
 class ProductAdapter extends BaseAdapter {
-    public ProductAdapter(List<Product> mProductList, LayoutInflater layoutInflater, boolean b) {
+
+    private List<Product> mProductList;
+    private LayoutInflater mInflater;
+    private boolean mShowQuantity;
+    public ProductAdapter(List<Product> list, LayoutInflater layoutInflater, boolean b) {
+        mProductList = list;
+        mInflater = layoutInflater;
+        mShowQuantity = b;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return mProductList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return mProductList.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        final ViewItem item;
+
+        if(view == null){
+            view = mInflater.inflate(R.layout.item, null);
+            item = new ViewItem();
+            item.productImageView = (ImageView) view.findViewById(R.id.ImageViewItem);
+            item.productTitle = (TextView) view.findViewById(R.id.TextViewItem);
+            item.productQuantity = (TextView) view.findViewById(R.id.textViewQuantity);
+            view.setTag(item);
+        }else{
+            item = (ViewItem) view.getTag();
+        }
+
+        Product p = mProductList.get(i);
+        item.productImageView.setImageDrawable(p.productImage);
+        item.productTitle.setText(p.title);
+
+        if(mShowQuantity){
+            item.productQuantity.setText("Quantity: " + ProductHelper.getProductQuantity(p));
+        }else{
+            item.productQuantity.setVisibility(View.GONE);
+        }
+
+        return view;
+    }
+
+    private class ViewItem {
+        ImageView productImageView;
+        TextView productTitle;
+        TextView productQuantity;
     }
 }
